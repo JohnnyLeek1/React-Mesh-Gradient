@@ -1,0 +1,46 @@
+{
+  "name": "@johnn-e/react-mesh-gradient",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@rollup/plugin-alias": "^5.0.0",
+    "@types/node": "^18.15.11",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react": "^3.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "typescript": "^4.9.3",
+    "vite": "^4.2.0",
+    "vite-plugin-dts": "^2.2.0",
+    "vite-plugin-glsl": "^1.1.2"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/react-mesh-gradient.umd.js",
+  "module": "./dist/react-mesh-gradient.es.js",
+  "types": "./dist/react-mesh-gradient.es.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/react-mesh-gradient.es.js",
+      "require": "./dist/react-mesh-gradient.umd.js"
+    },
+    "./styles": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    }
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.64.0",
+    "@react-three/fiber": "^8.12.0",
+    "@types/three": "^0.150.1",
+    "three": "^0.151.3"
+  }
+}
