@@ -1,7 +1,3 @@
-<!-- 
-    README Template taken from / inspired by 
-    https://github.com/othneildrew/Best-README-Template
--->
 <a name="readme-top"></a>
 
 
@@ -363,3 +359,8 @@ Project Link: [https://github.com/JohnnyLeek1/React-Mesh-Gradient](https://githu
 [Vite-url]: https://vitejs.dev/
 [Rollup-Badge]: https://img.shields.io/badge/RollupJS-ef3335?style=for-the-badge&logo=rollup.js&logoColor=white
 [Rollup-url]: https://rollupjs.org/
+
+<!-- 
+    README Template taken from / inspired by 
+    https://github.com/othneildrew/Best-README-Template
+-->
