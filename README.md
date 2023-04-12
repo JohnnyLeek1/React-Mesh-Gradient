@@ -122,11 +122,11 @@ Utilizing React Mesh Gradient is incredibly simple. Simply install the package a
     <MeshGradientRenderer
         className="gradient"
         colors={[
-            0xC3E4FF, 
-            0x6EC3F4, 
-            0xEAE2FF, 
-            0xB9BEFF, 
-            0xB3B8F9
+            "#C3E4FF", 
+            "#6EC3F4", 
+            "#EAE2FF", 
+            "#B9BEFF", 
+            "#B3B8F9"
         ]}
     />
    } 
@@ -150,11 +150,11 @@ const Gradient = () => {
     return (
         <MeshGradientRenderer
             colors={[
-                0xC3E4FF, 
-                0x6EC3F4, 
-                0xEAE2FF, 
-                0xB9BEFF, 
-                0xB3B8F9
+                "#C3E4FF", 
+                "#6EC3F4", 
+                "#EAE2FF", 
+                "#B9BEFF", 
+                "#B3B8F9"
             ]}
             wireframe={true}
         />
@@ -178,11 +178,11 @@ const ToggleWireframeGradient = () => {
         <div>
             <MeshGradientRenderer
                 colors={[
-                    0xC3E4FF, 
-                    0x6EC3F4, 
-                    0xEAE2FF, 
-                    0xB9BEFF, 
-                    0xB3B8F9
+                    "#C3E4FF", 
+                    "#6EC3F4", 
+                    "#EAE2FF", 
+                    "#B9BEFF", 
+                    "#B3B8F9"
                 ]}
             />
             <button onClick={() => setIsWireframe(!isWireframe)}>Toggle Wireframe</button>
@@ -215,10 +215,10 @@ Using these functions, we can do things like cycle between colors when a user cl
 ```tsx
 const GradientClick = () => {
     const palettes = [
-        [0xF9B409, 0xF9D16A, 0x2A687A, 0x72A25E, 0xC3B49E],
-        [0xC3E4FF, 0x6EC3F4, 0xEAE2FF, 0xB9BEFF, 0xB3B8F9],
-        [0x69D2E7, 0xA7DBD8, 0xE0E4CC, 0xF38630, 0xFA6900],
-        [0xFE4365, 0xFC9D9A, 0xF9CDAD, 0xC8C8A9, 0x83AF9B]
+        ["#F9B409", "#F9D16A", "#2A687A", "#72A25E", "#C3B49E"],
+        ["#C3E4FF", "#6EC3F4", "#EAE2FF", "#B9BEFF", "#B3B8F9"],
+        ["#69D2E7", "#A7DBD8", "#E0E4CC", "#F38630", "#FA6900"],
+        ["#FE4365", "#FC9D9A", "#F9CDAD", "#C8C8A9", "#83AF9B"]
   ];
 
   const [colorIndex, setColorIndex] = useState(0);
@@ -238,13 +238,13 @@ _For more examples, please refer to the [Documentation]()_ (coming soon)
 
 ## Current props available
 
-`colors` (required) - Array of hex colors to use.
+`colors` (required) - Array of colors to use represented as a hex string.
 
 `wireframe` - Whether or not the gradient should be rendered in wireframe mode.
 
 `speed` - The speed at which the gradient should move. The speed should be a number between 0 and 1.
 
-`backgroundColor` - The background color of the gradient. The color should be in hex format.
+`backgroundColor` - The background color of the gradient. The color should be in hex string.
 
 `backgroundOpacity` - The opacity of the background. The opacity should be a number between 0 and 1.
 

@@ -22,7 +22,7 @@ import fragment from '../shaders/fragment.glsl';
  * See individual docs inside the interface for explanations of each property
  * 
  * @interface MeshGradientProps
- * @property {number[]} colors
+ * @property {string[]} colors
  * @property {boolean} [wireframe=false]
  * @property {number} [speed=0.01] 
  * @property {number} [backgroundColor=0x000000]
@@ -43,13 +43,13 @@ import fragment from '../shaders/fragment.glsl';
  */
 interface MeshGradientProps {
   /** An array of colors to be used in the gradient. The colors should be in hex format. */
-  colors: number[];
+  colors: string[];
   /** Whether or not the gradient should be rendered in wireframe mode. */
   wireframe?: boolean;
   // The speed at which the gradient should move. The speed should be a number between 0 and 1.
   speed?: number;
   // The background color of the gradient. The color should be in hex format.
-  backgroundColor?: number;
+  backgroundColor?: string;
   // The opacity of the background. The opacity should be a number between 0 and 1.
   backgroundOpacity?: number;
   // Click handler for the gradient. Will be called with the native Three.JS Event object.
@@ -84,7 +84,7 @@ interface MeshGradientProps {
  * @returns A mesh containing the MeshGradient
  */
 function MeshGradient({
-  colors, wireframe = false, speed = 0.01, backgroundColor = 0xFFFFFF,
+  colors, wireframe = false, speed = 0.01, backgroundColor = "#FFFFFF",
   backgroundOpacity = 1.0, onGradientClick, onGradientContextMenu,
   onGradientDoubleClick, onGradientWheel, onGradientPointerUp,
   onGradientPointerDown, onGradientPointerOver, onGradientPointerOut,
@@ -103,15 +103,14 @@ function MeshGradient({
   const [time, setTime] = useState(0);
 
   // Map hex colors to Three.Color objects
-  const colorPalette = colors.map((color) => new THREE.Color(color));
-
+  const colorPalette = colors.map((color) => new THREE.Color(color as THREE.ColorRepresentation));
 
   // When the component is rendered, set the Three.JS renderer properties
   useEffect(() => {
 
     // Renderer settings
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.setClearColor(backgroundColor, backgroundOpacity);
+    renderer.setClearColor(backgroundColor as THREE.ColorRepresentation, backgroundOpacity);
     renderer.useLegacyLights = true;
     renderer.outputEncoding = THREE.sRGBEncoding;
 
