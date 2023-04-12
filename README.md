@@ -26,7 +26,7 @@
     <a href="https://github.com/JohnnyLeek1/React-Mesh-Gradient"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/JohnnyLeek1/React-Mesh-Gradient">View Demo</a>
+    <a href="https://codesandbox.io/p/sandbox/purple-worker-hur815?file=%2Fsrc%2FApp.tsx">View Demo</a>
     ·
     <a href="https://github.com/JohnnyLeek1/React-Mesh-Gradient/issues">Report Bug</a>
     ·
@@ -359,6 +359,7 @@ Project Link: [https://github.com/JohnnyLeek1/React-Mesh-Gradient](https://githu
 [Vite-url]: https://vitejs.dev/
 [Rollup-Badge]: https://img.shields.io/badge/RollupJS-ef3335?style=for-the-badge&logo=rollup.js&logoColor=white
 [Rollup-url]: https://rollupjs.org/
+[Sandbox-Link]: https://codesandbox.io/p/sandbox/purple-worker-hur815?file=%2Fsrc%2FApp.tsx
 
 <!-- 
     README Template taken from / inspired by 
