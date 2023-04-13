@@ -190,6 +190,10 @@ interface MeshGradientRendererProps extends React.HTMLAttributes<HTMLDivElement>
   width?: string;
   // The height of the gradient. The height should be a string that can be parsed by the CSS parser.
   height?: string;
+  // The style of the gradient. The style should be an object that can be parsed by the CSS parser.
+  style?: React.CSSProperties;
+  // The children of the gradient. The children should be a React element.
+  children?: React.ReactNode;
 }
 
 /**
@@ -205,26 +209,29 @@ const MeshGradientRenderer: React.FunctionComponent<MeshGradientRendererProps> =
   onGradientDoubleClick, onGradientWheel, onGradientPointerUp,
   onGradientPointerDown, onGradientPointerOver, onGradientPointerOut,
   onGradientPointerEnter, onGradientPointerLeave, onGradientPointerMove,
-  onGradientPropsUpdate,
+  onGradientPropsUpdate, style, children,
   ...containerProps
 }) => {
 
   return (
-    <div {...containerProps} >
-      <Canvas>
-        <PerspectiveCamera makeDefault manual position={new THREE.Vector3(0, 0, 0.5)} near={0.001} far={1000} />
-        <MeshGradient
-          colors={colors} wireframe={wireframe} speed={speed}
-          backgroundColor={backgroundColor} backgroundOpacity={backgroundOpacity}
-          onGradientClick={onGradientClick} onGradientContextMenu={onGradientContextMenu}
-          onGradientDoubleClick={onGradientDoubleClick} onGradientWheel={onGradientWheel}
-          onGradientPointerUp={onGradientPointerUp} onGradientPointerDown={onGradientPointerDown}
-          onGradientPointerOver={onGradientPointerOver} onGradientPointerOut={onGradientPointerOut}
-          onGradientPointerEnter={onGradientPointerEnter} onGradientPointerLeave={onGradientPointerLeave}
-          onGradientPointerMove={onGradientPointerMove} onGradientPropsUpdate={onGradientPropsUpdate}
-        />
-      </Canvas>
-    </div>
+    <>
+      <div style={{ position: "absolute", zIndex: -1, ...style }} {...containerProps} >
+        <Canvas>
+          <PerspectiveCamera makeDefault manual position={new THREE.Vector3(0, 0, 0.5)} near={0.001} far={1000} />
+          <MeshGradient
+            colors={colors} wireframe={wireframe} speed={speed}
+            backgroundColor={backgroundColor} backgroundOpacity={backgroundOpacity}
+            onGradientClick={onGradientClick} onGradientContextMenu={onGradientContextMenu}
+            onGradientDoubleClick={onGradientDoubleClick} onGradientWheel={onGradientWheel}
+            onGradientPointerUp={onGradientPointerUp} onGradientPointerDown={onGradientPointerDown}
+            onGradientPointerOver={onGradientPointerOver} onGradientPointerOut={onGradientPointerOut}
+            onGradientPointerEnter={onGradientPointerEnter} onGradientPointerLeave={onGradientPointerLeave}
+            onGradientPointerMove={onGradientPointerMove} onGradientPropsUpdate={onGradientPropsUpdate}
+          />
+        </Canvas>
+      </div>
+      {children}
+    </>
   );
 };
 

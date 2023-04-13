@@ -26,7 +26,9 @@ function App() {
         backgroundOpacity={0.8}
         onGradientClick={() => setColorIndex(colorIndex === palettes.length - 1 ? 0 : colorIndex + 1)}
         onGradientPointerMove={(e) => { console.log(e); }}
-      />
+      >
+        <div>hello</div>
+      </MeshGradientRenderer>
       <div id="button_container">
         <button onClick={() => setIsWireframe(!isWireframe)}>Toggle Wireframe</button>
         <button onClick={() => setColorIndex(colorIndex === palettes.length - 1 ? 0 : colorIndex + 1)}>Switch Color</button>
