@@ -114,6 +114,8 @@ function MeshGradient({
     renderer.useLegacyLights = true;
     renderer.outputEncoding = THREE.sRGBEncoding;
 
+    return () => renderer.dispose();
+
   });
 
   // Every frame, update the time with the current speed, multiplied by the delta time (to ensure a consistent rate across all devices)
